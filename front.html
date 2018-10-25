@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://github.com/tymonaghan/sotu-db/raw/master/images/favicon.png">
+  <link rel="stylesheet" href="./style/w3.css">
 
-<link rel="stylesheet" href="./style/w3.css">
+  <title>SOTU-db</title>
 
-<title>SOTU-db</title>
+  <body>
+    <div class="w3-top">
+      <!-- top menu bar -->
+      <div class="w3-bar w3-purple" style="padding-left:10px">
+        <a href="#" class="w3-bar-item w3-button"><b>SOTU-db</b></a>
+        <a href="#" class="w3-bar-item w3-right w3-button w3-hide-small">Credits</a>
+        <a href="#" class="w3-bar-item w3-right w3-button w3-hide-small">Documentation</a>
+        <a href="#" class="w3-bar-item w3-right w3-button w3-hide-small">Browse SOTUs</a>
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
+      </div>
 
-<body>
-  <div class="w3-top"> <!-- top menu bar -->
-  <div class="w3-bar w3-purple" style="padding-left:10px">
-    <a href="#" class="w3-bar-item w3-button"><b>SOTU-db</b></a>
-    <a href="#" class="w3-bar-item w3-right w3-button w3-hide-small">Credits</a>
-    <a href="#" class="w3-bar-item w3-right w3-button w3-hide-small">Documentation</a>
-    <a href="#" class="w3-bar-item w3-right w3-button w3-hide-small">Browse SOTUs</a>
-     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
-</div>
+      <div id="mobilemenu" class="w3-bar-block w3-purple w3-hide w3-hide-large w3-hide-medium">
+        <a href="#" class="w3-bar-item w3-button w3-right">Browse SOTUs</a>
+        <a href="#" class="w3-bar-item w3-button w3-right">Documentation</a>
+        <a href="#" class="w3-bar-item w3-button w3-right">Credits</a>
+      </div>
+    </div>
 
-<div id="mobilemenu" class="w3-bar-block w3-purple w3-hide w3-hide-large w3-hide-medium">
-  <a href="#" class="w3-bar-item w3-button w3-right">Browse SOTUs</a>
-  <a href="#" class="w3-bar-item w3-button w3-right">Documentation</a>
-  <a href="#" class="w3-bar-item w3-button w3-right">Credits</a>
-</div>
-</div>
+    <br><br>
+    <div class="w3-container">
+      <h3>Search and perform sentiment analysis on a corpus of State of the Union address texts</h3>
+      <form>
+        Enter your search term:<br>
+        <input type="text" name="searchTerm" placeholder="democracy..." required><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div> <!-- end w3-container -->
 
-<br><br>
-<div class="w3-container">
-<h3>Search and perform sentiment analysis on a corpus of State of the Union address texts</h3>
-<form>
-  Enter your search term:<br>
-  <input type="text" name="searchTerm" placeholder="democracy..." required><br>
-  <input type="submit" value="Submit">
-</form>
-</div> <!-- end w3-container -->
+    <script>
+      function myFunction() {
+        var x = document.getElementById("mobilemenu");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else {
+          x.className = x.className.replace(" w3-show", "");
+        }
+      }
+    </script>
+  </body>
 
-<script>
-function myFunction() {
-    var x = document.getElementById("mobilemenu");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-</script>
-</body>
 </html>
