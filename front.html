@@ -25,15 +25,21 @@
     </div>
 
     <br><br>
-    <div class="w3-container">
-      <h3>Search and perform sentiment analysis on a corpus of State of the Union address texts</h3>
-      <form>
-        Enter your search term:<br>
-        <input type="text" name="searchTerm" placeholder="democracy..." required><br>
-        <input type="submit" value="Submit">
-      </form>
-    </div> <!-- end w3-container -->
-
+    <div class="w3-cell-row w3-margin">
+      <div class="w3-cell w3-mobile w3-twothird w3-padding">
+        <h3>Search and perform sentiment analysis on a corpus of State of the Union address texts</h3>
+        <form>
+          Enter your search term:<br>
+          <input type="text" name="searchTerm" placeholder="democracy..." required><br>
+          <input type="submit" value="Submit">
+        </form>
+      </div> <!-- end w3-cell -->
+      <div class="w3-cell w3-mobile w3-rest w3-padding">
+        <a href="https://twitter.com/SOTU_db?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @SOTU_db</a>
+        <a class="twitter-timeline" href="https://twitter.com/SOTU_db/lists/presidential-libraries?ref_src=twsrc%5Etfw">A Twitter List by SOTU_db</a>
+      </div>
+    </div>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script>
       function myFunction() {
         var x = document.getElementById("mobilemenu");
@@ -42,7 +48,7 @@
         } else {
           x.className = x.className.replace(" w3-show", "");
         }
-      }
+      } //end myFunction
     </script>
   </body>
 
