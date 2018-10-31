@@ -26,30 +26,75 @@
 
     <br><br>
     <div class="w3-cell-row w3-margin">
-      <div class="w3-cell w3-mobile w3-twothird w3-padding">
+      <div class="w3-cell w3-twothird w3-padding">
         <h3>Search and perform sentiment analysis on a corpus of State of the Union address texts</h3>
-        <form>
-          Enter your search term:<br>
-          <input type="text" name="searchTerm" placeholder="democracy..." required><br>
-          <input type="submit" value="Submit">
-        </form>
-      </div> <!-- end w3-cell -->
-      <div class="w3-cell w3-mobile w3-rest w3-padding">
-        <a href="https://twitter.com/SOTU_db?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @SOTU_db</a>
-        <a class="twitter-timeline" href="https://twitter.com/SOTU_db/lists/presidential-libraries?ref_src=twsrc%5Etfw">A Twitter List by SOTU_db</a>
+        <div class="w3-padding w3-card">
+          <!-- this div might be superfluous -->
+          <div class="w3-bar w3-light-gray">
+            <!--tab bar -->
+            <button class="w3-bar-item w3-button tablink w3-light-blue" onclick="openTab('search')">Search by term</button>
+            <button class="w3-bar-item w3-button tablink" onclick="openTab('filter')">Filter list view</button>
+            <button class="w3-bar-item w3-button tablink" onclick="openTab('fileviewer')">File viewer</button>
+          </div> <!-- end w3-bar tab-bar -->
+          <div id="search" class="tab w3-container w3-show">
+            <form>
+              <h4>Enter your search term:</h4>
+              <input class="w3-input w3-border w3-round" type="text" name="searchTerm" placeholder="democracy..." required></input>
+              <br><br>
+              <input type="submit" value="Submit"></input>
+              <div class="w3-right">
+                <input class="w3-check" type="checkbox">
+                <label>Written only</label></input>
+                <input class="w3-check" type="checkbox">
+                <label>Verbal only</label></input>
+                <input class="w3-check" type="checkbox" checked="checked">
+                <label>Both</label></input>
+              </div </form> </div> <!-- end search -->
+              <div id="filter" class="tab w3-container w3-hide">
+                <div class="w3-container">
+                  <h2>Filter List</h2>
+                  <p>Search for a name in the input field.</p>
+
+                  <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for names.." id="myInput" onkeyup="myFunction()">
+                  <ul class="w3-ul w3-margin-top" id="myUL">
+                    <li>Adele</li>
+                    <li>Agnes</li>
+                    <li>Billy</li>
+                    <li>Bob</li>
+                    <li>Calvin</li>
+                    <li>Christina</li>
+                    <li>Cindy</li>
+                  </ul>
+                </div>
+              </div> <!-- end filter -->
+
+              <div id="fileviewer" class="tab w3-container w3-hide">
+                <p> this is the fileviewer yayyy</p>
+              </div> <!-- end fileviewer -->
+          </div> <!-- end w3-card -->
+        </div> <!-- end w3-cell -->
+
+        <div class="w3-cell w3-mobile w3-rest w3-padding">
+          <a href="https://twitter.com/SOTU_db?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @SOTU_db</a>
+          <a class="twitter-timeline" href="https://twitter.com/SOTU_db/lists/presidential-libraries?ref_src=twsrc%5Etfw">A Twitter List by SOTU_db</a>
+        </div>
       </div>
-    </div>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <script>
-      function myFunction() {
-        var x = document.getElementById("mobilemenu");
-        if (x.className.indexOf("w3-show") == -1) {
-          x.className += " w3-show";
-        } else {
-          x.className = x.className.replace(" w3-show", "");
-        }
-      } //end myFunction
-    </script>
+
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+      <script>
+        function myFunction() {
+          var x = document.getElementById("mobilemenu");
+          if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+          } else {
+            x.className = x.className.replace(" w3-show", "");
+          }
+        } //end myFunction
+      </script>
+
+
+
   </body>
 
 </html>
