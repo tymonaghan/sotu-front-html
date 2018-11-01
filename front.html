@@ -3,6 +3,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="https://github.com/tymonaghan/sotu-db/raw/master/images/favicon.png">
   <link rel="stylesheet" href="./style/w3.css">
+  <style>
+  </style>
+
 
   <title>SOTU-db</title>
 
@@ -14,7 +17,7 @@
         <a href="#" class="w3-bar-item w3-right w3-button w3-hide-small">Credits</a>
         <a href="#" class="w3-bar-item w3-right w3-button w3-hide-small">Documentation</a>
         <a href="#" class="w3-bar-item w3-right w3-button w3-hide-small">Browse SOTUs</a>
-        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="showDropMenu()">&#9776;</a>
       </div>
 
       <div id="mobilemenu" class="w3-bar-block w3-purple w3-hide w3-hide-large w3-hide-medium">
@@ -39,7 +42,7 @@
           <div id="search" class="tab w3-container">
             <form method="GET">
               <h4>Enter your search term:</h4>
-              <input class="w3-input w3-border w3-round" type="text" name="searchTerm" placeholder="democracy..." required></input>
+              <input class="w3-input w3-border w3-round" type="text" name="searchTerm" placeholder="democracy..." id="searchBox" required></input>
 
               <p><i>please note searches are not encrypted and should not be considered private</i></p>
 
@@ -58,16 +61,15 @@
             <div class="w3-container">
               <h2>Filter List</h2>
               <p>Search for a name in the input field.</p>
-
-              <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for names.." id="myInput" onkeyup="myFunction()">
+              <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for names.." id="filterSearchBox" onkeyup="updateFilterSearch()">
               <ul class="w3-ul w3-margin-top" id="myUL">
-                <li>Adele</li>
-                <li>Agnes</li>
-                <li>Billy</li>
-                <li>Bob</li>
-                <li>Calvin</li>
-                <li>Christina</li>
-                <li>Cindy</li>
+                <li><a href="#">Washington</a></li>
+                <li><a href="#">Adams</a></li>
+                <li><a href="#">Jefferson</a></li>
+                <li><a href="#">Madison</a></li>
+                <li><a href="#">Monroe</a></li>
+                <li><a href="#">Quincy Adams</a></li>
+                <li><a href="#">Jackson</a></li>
               </ul>
             </div>
           </div> <!-- end filter -->
@@ -90,7 +92,7 @@
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
     <script>
-      function myFunction() {
+      function showDropMenu() {
         var x = document.getElementById("mobilemenu");
         if (x.className.indexOf("w3-show") == -1) {
           x.className += " w3-show";
@@ -98,6 +100,22 @@
           x.className = x.className.replace(" w3-show", "");
         }
       } //end myFunction
+
+      function updateFilterSearch() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("filterSearchBox");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+      }
 
       function openTab(tabName) { //really not sure why i can't get this to work with the w3-hide/w3-show arrangement like above, but style=display works for now.
         var i;
