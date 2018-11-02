@@ -1,3 +1,3 @@
 <?php
-'Rscript ./myscript.R > sentiments.txt'
+`Rscript ./myscript.R | echo > ./output/sentiments.txt`;
  ?>

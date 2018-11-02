@@ -1,0 +1,1 @@
+Rscript myscript.R | echo > sentiments.txt
