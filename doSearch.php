@@ -1,9 +1,12 @@
 <html>
 <body>
 <?php
+$term = null;
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $term = clean_input($_GET["searchTerm"]);
+
 }
+
 function clean_input($data) {
 $data = trim($data);
 $data = stripslashes($data);
