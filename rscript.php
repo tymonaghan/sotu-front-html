@@ -1,7 +1,8 @@
 <?php
 $myFile = fopen("sentiments.txt", "w"); #opens (and creates if necessary) sentiments.txt as $myFile
 $myScript = fopen("myscript.R", "r"); # opens myscript.R as $myScript
-fwrite($myFile, fread($myScript,filesize("myscript.R"))); #writes ($to myFile, readscontent of $myScript for as many bytes as myscript.R is long)
+`Rscript myscript.R > sentiments.txt`;
+#fwrite($myFile, fread($myScript,filesize("myscript.R"))); #writes ($to myFile, readscontent of $myScript for as many bytes as myscript.R is long)
 fclose($myScript); #close $myScript
 fclose($myFile); #close $myFile
 # Rscript myscript.R > sentiments.txt
