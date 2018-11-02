@@ -11,6 +11,19 @@
   </head>
 
   <body>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+      $term = clean_input($_POST["searchTerm"]);
+    }
+    function clean_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+
+    $searchTerm
     <div class="w3-top">
       <!-- top menu bar -->
       <div class="w3-bar w3-purple" style="padding-left:10px">
@@ -44,7 +57,7 @@
             <button class="w3-bar-item w3-button w3-border-top w3-border-right tablink" onclick="openTab('fileviewer')" id="fileviewerbutton">File viewer</button>
           </div> <!-- end w3-bar tab-bar -->
           <div id="search" class="tab w3-container w3-padding">
-            <form action="doSearch.php" method="GET">
+            <form action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF"]);?>" method="GET">
               <label>Enter your search term:</label>
               <input class="w3-input w3-border w3-round" type="text" name="searchTerm" placeholder="democracy..." id="searchBox" required></input>
 
