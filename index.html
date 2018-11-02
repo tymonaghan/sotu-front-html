@@ -13,7 +13,7 @@
   <body>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
-      $term = clean_input($_POST["searchTerm"]);
+      $term = clean_input($_GET["searchTerm"]);
     }
     function clean_input($data) {
   $data = trim($data);
