@@ -13,19 +13,7 @@
   <body>
     <div class="w3-top">
       <!-- top menu bar -->
-      <div class="w3-bar w3-purple" style="padding-left:10px">
-        <a href="#" class="w3-bar-item w3-button"><b>SOTU-db</b></a>
-        <a href="credits.html" class="w3-bar-item w3-right w3-button w3-hide-small">Credits</a>
-        <a href="documentation.html" class="w3-bar-item w3-right w3-button w3-hide-small w3-border-right">Documentation</a>
-        <a href="https://github.com/tymonaghan/sotu-db" class="w3-bar-item w3-right w3-button w3-hide-small w3-border-right">GitHub Repository <i class="fa fa-external-link"></i></a>
-        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="showDropMenu()">&#9776;</a>
-      </div>
-
-      <div id="mobilemenu" class="w3-bar-block w3-purple w3-hide w3-hide-large w3-hide-medium">
-        <a href="https://github.com/tymonaghan/sotu-db" class="w3-bar-item w3-button w3-right">GitHub Repository <i class="fa fa-external-link"></i></a>
-        <a href="documentation.html" class="w3-bar-item w3-button w3-right">Documentation</a>
-        <a href="credits.html" class="w3-bar-item w3-button w3-right">Credits</a>
-      </div>
+      <?php include 'topnav.php';?>
     </div>
     <div><br><br></div>
     <div class="w3-cell-row w3-margin w3-padding">
@@ -44,9 +32,9 @@
             <button class="w3-bar-item w3-button w3-border-top w3-border-right tablink" onclick="openTab('fileviewer')" id="fileviewerbutton">File viewer</button>
           </div> <!-- end w3-bar tab-bar -->
           <div id="search" class="tab w3-container w3-padding">
-            <form method="GET">
+            <form method="GET" action="mock-results.html">
               <label>Enter your search term:</label>
-              <input class="w3-input w3-border w3-round" type="text" name="searchTerm" placeholder="democracy..." id="searchBox" required></input>
+              <input class="w3-input w3-border w3-round" type="text" name="searchTerm" placeholder="try Obama or Washington..." id="searchBox" required></input>
 
               <p><i>please note searches are not encrypted and should not be considered private</i></p>
 
@@ -60,10 +48,6 @@
                 <label>Both</label></input>
               </div>
             </form>
-            <?php
-$txt = "W3Schools.com";
-echo "I love $txt!";
-?>
           </div> <!-- end search -->
           <div id="filter" class="tab w3-container" style="display:none">
             <div class="w3-container">
